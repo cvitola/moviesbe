@@ -49,7 +49,7 @@ const findUserByMail = async(mail) => {
         const usersColl = getCollection("users");
         console.log(mail)
         //NUNCA ENCUENTRA NADA cuando lo sobrecargo
-        const user = await usersColl.find({},{"mail": mail} ).toArray();
+        const user = await usersColl.find({mail}).toArray();
         return user;
     } catch (error) {
         throw new Error(error)
